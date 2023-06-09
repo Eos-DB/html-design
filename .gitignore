@@ -1,0 +1,3 @@
+# Remove SASS files and maps
+# *.scss
+*.map

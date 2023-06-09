@@ -1,0 +1,104 @@
+@import url(https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900);
+:root {
+  --primary-color: #0f52ba;
+  --secondary-color: #50c878;
+  --background-color: #e2f6f6;
+  --white: #fff;
+  --black: #000;
+}
+
+body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp, small,
+strike, strong, sub, sup, tt, var, b, u, i,
+center, dl, dt, dd, ol, ul, li, fieldset, form,
+label, legend, table, caption, tbody, tfoot,
+thead, tr, th, td, article, aside, canvas,
+details, embed, figure, figcaption, footer,
+header, hgroup, menu, nav, output, ruby, section,
+summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  box-sizing: inherit;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  font-family: "Poppins";
+}
+
+html {
+  box-sizing: border-box;
+  overflow: hidden auto;
+}
+
+a, button, input, textarea, fieldset {
+  outline: none;
+}
+
+a, button, input[type=radio], input[type=checkbox] {
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  background: var(--background-color);
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 6px;
+  border: 2px solid var(--background-color);
+}
+
+svg:not(:root) {
+  display: block;
+}
+
+::-moz-selection {
+  color: var(--white);
+  background: #444;
+}
+
+::selection {
+  color: var(--white);
+  background: #444;
+}
+
+::-moz-placeholder {
+  cursor: default;
+  -moz-user-select: none;
+       user-select: none;
+}
+
+h1, h2, h3, h4, h5, p, a, span, button, ::placeholder {
+  cursor: default;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
+}
+
+@keyframes turn-animation {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+img ~ span {
+  display: none;
+}
+img.failed {
+  display: none;
+}
+img.failed ~ span {
+  display: inline-block;
+}/*# sourceMappingURL=styles.css.map */
