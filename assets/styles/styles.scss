@@ -54,15 +54,15 @@ a, button, input, textarea, fieldset { outline: none }
 a, button, input[type="radio"], input[type="checkbox"] { cursor: pointer }
 
 ::-webkit-scrollbar {
-    background: var(--background-color);
+    background: var(--white-1);
     width: 12px;
     height: 12px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--primary-color);
+    background: var(--grey-3);
     border-radius: 6px;
-    border: 2px solid var(--background-color);
+    border: 2px solid var(--white-1);
 }
 
 svg:not(:root) { display: block }
@@ -98,8 +98,156 @@ img {
 }
 
 body {
+    $nav-width: 50px;
+    $header-height: 65px;
+
+    padding-top: $header-height;
     background-color: var(--white-1);
     background: radial-gradient(42% 130% at 80% 75%, var(--white-5) 0%, var(--white-1) 35%);
+
+    header {
+        position: fixed;
+        width: calc(100% - 2.2 * $nav-width);
+        height: $header-height;
+        background: var(--grey-3);
+        top: 0;
+        right: 0;
+        border-bottom-left-radius: 20px;
+        padding: 0 1rem 0 2rem;
+        color: var(--white);
+        box-shadow: -5px 5px 12px -1px var(--white-3);
+        transition: all .4s;
+        z-index: 10;
+
+        > p { font-size: 20px }
+
+        .container {
+            gap: 1rem;
+
+            .content {
+                gap: .6rem;
+
+                .avatar {
+                    width: 40px;
+                    height: 40px;
+                    background: var(--white);
+                    border-radius: 50%;
+
+                    img { width: 95%; height: 95% }
+                }
+
+                p {
+                    font-size: 1.1rem;
+                    font-weight: 300;
+                }
+            }
+
+            button {
+                background: none;
+                border: none;
+                width: 40px;
+                height: 40px;
+                opacity: 1;
+                transition: all .2s;
+                cursor: pointer;
+
+                &:hover, &:focus { opacity: .8 }
+            }
+        }
+    }
+
+    nav {
+        width: $nav-width;
+        height: 100%;
+        position: absolute;
+        background: var(--grey-3);
+        padding-top: 100px;
+        transition: all .4s;
+        overflow: hidden;
+        top: 0;
+        left: 0;
+
+        section {
+            position: absolute;
+            width: 250px;
+
+            h4 {
+                background: var(--grey-1);
+                height: $nav-width;
+                width: 100%;
+                text-align: center;
+                text-transform: uppercase;
+                font-weight: 400;
+                color: var(--grey-6);
+                line-height: $nav-width;
+            }
+
+            ul {
+                list-style: none;
+
+                li {
+                    background: none;
+                    width: 100%;
+                    height: $nav-width;
+                    cursor: pointer;
+                    opacity: 1;
+                    transition: all .2s;
+
+                    .icon {
+                        width: $nav-width;
+                        height: $nav-width;
+                        position: relative;
+                        pointer-events: none;
+
+                        img {
+                            width: 50%;
+                            height: 50%;
+                        }
+                    }
+
+                    p {
+                        padding-left: 4px;
+                        color: var(--grey-6);
+                        font-size: 1rem;
+                        pointer-events: none;
+                    }
+
+                    &.selected {
+                        background: var(--grey-2);
+
+                        .icon::before {
+                            content: "";
+                            position: absolute;
+                            display: block;
+                            width: 3px;
+                            height: 100%;
+                            background: var(--white);
+                            left: 0;
+                        }
+                    }
+
+                    &:hover, &:focus {
+                        opacity: 85%;
+                        background: var(--grey-2);
+                    }
+                }
+            }
+
+            &:nth-child(1) { top: calc(0 * (4 * $nav-width) + 100px) }
+            &:nth-child(2) { top: calc(1 * (4 * $nav-width) + 100px) }
+            &:nth-child(3) { top: calc(2 * (4 * $nav-width) + 100px) }
+        }
+
+        &:hover { width: 250px }
+    }
+
+    main {
+        position: relative;
+        width: calc(100% - $nav-width);
+        height: calc(100% - $header-height);
+        left: $nav-width;
+        transition: all .4s;
+    }
 
     form {
         gap: 1rem;
@@ -143,6 +291,15 @@ body {
                 border: 1px solid var(--white-6);
                 &:focus { border-color: var(--grey-5) }
             }
+        }
+    }
+
+    &.extended {
+        header { width: calc(100% - 1.2 * $nav-width - 250px) }
+
+        main {
+            left: 250px;
+            width: calc(100% - 250px);
         }
     }
 }
