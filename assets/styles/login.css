@@ -1,0 +1,81 @@
+body {
+  height: 100%;
+  overflow: hidden;
+}
+body .corner {
+  position: absolute;
+  width: 65%;
+  height: 85%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+body .corner img {
+  width: 100%;
+  height: 100%;
+}
+body .corner h2 {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 1.4rem;
+  color: var(--white);
+}
+@media screen and (max-width: 900px) {
+  body .corner {
+    width: 60%;
+    height: 80%;
+  }
+}
+@media screen and (max-width: 800px) {
+  body .corner {
+    width: 65%;
+    height: 75%;
+  }
+}
+@media screen and (max-width: 700px) {
+  body .corner {
+    width: 70%;
+    height: 70%;
+  }
+}
+@media screen and (max-width: 600px) {
+  body .corner {
+    width: 75%;
+    height: 65%;
+  }
+}
+@media screen and (max-width: 500px) {
+  body .corner {
+    width: 80%;
+    height: 60%;
+  }
+}
+@media screen and (max-width: 400px) {
+  body .corner {
+    width: 85%;
+    height: 55%;
+  }
+}
+body main {
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+}
+body main h1 {
+  color: var(--grey-3);
+  margin-bottom: 1.5rem;
+}
+body main form a {
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-decoration: none;
+  opacity: 1;
+  color: var(--grey-3);
+  font-weight: 500;
+  font-style: italic;
+  transition: all 0.2s;
+}
+body main form a:focus, body main form a:hover {
+  opacity: 0.9;
+}/*# sourceMappingURL=login.css.map */
