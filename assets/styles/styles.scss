@@ -114,6 +114,7 @@ body {
     padding-top: $header-height;
     background-color: var(--white-1);
     background: radial-gradient(42% 130% at 80% 75%, var(--white-5) 0%, var(--white-1) 35%);
+    background-attachment: fixed;
 
     header {
         position: fixed;
