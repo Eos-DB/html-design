@@ -1,0 +1,160 @@
+body main {
+    min-height: calc(100vh - 65px);
+    height: 100%;
+    gap: 20px;
+
+    > div, > section { width: 100% }
+
+    .quick-links {
+        min-height: 80px;
+        height: 17.5%;
+
+        .box {
+            width: calc(17.5% - 56px);
+            border-radius: 5px;
+            padding: 0 20px;
+            text-decoration: none;
+            cursor: pointer;
+            box-shadow: 0 0 10px -3px var(--white-3);
+            transition: all .2s;
+
+            .content {
+                gap: 10px;
+                pointer-events: none;
+
+                img {
+                    width: 30px;
+                    height: 30px;
+                    object-fit: contain;
+                }
+
+                h4 span {
+                    &, &::before, &::after {
+                        font-weight: 400;
+                        font-size: 14px;
+                    }
+
+                    &::before { content: '(' }
+                    &::after { content: ')' }
+                }
+            }
+
+            .carret {
+                font-weight: 600;
+                font-size: 20px;
+                translate: none;
+                transition: all .2s;
+                pointer-events: none;
+            }
+
+            &.red {
+                background: var(--red-3b);
+                color: var(--red-3);
+
+                .content img { filter: var(--red-3-filter) }
+            }
+
+            &.orange {
+                background: var(--orange-b);
+                color: var(--orange);
+
+                .content img { filter: var(--orange-filter) }
+            }
+
+            &.green {
+                background: var(--green-1b);
+                color: var(--green-1);
+
+                .content img { filter: var(--green-1-filter) }
+            }
+
+            &.turquoise {
+                background: var(--turquoise-b);
+                color: var(--turquoise);
+
+                .content img { filter: var(--turquoise-filter) }
+            }
+
+            &.blue {
+                background: var(--blue-1b);
+                color: var(--blue-1);
+
+                .content img { filter: var(--blue-1-filter) }
+            }
+
+            &:last-child { width: calc(30% - 56px) }
+
+            &:hover, &:focus {
+                opacity: 82.5%;
+                .carret { transform: translateX(15%) }
+            }
+        }
+    }
+
+    .two-row-sections {
+        min-height: 300px;
+        height: 37.5%;
+        gap: 20px;
+
+        section#statistics {
+            width: 40%;
+
+            .content {
+                background: #f7f9fc;
+                border-radius: 5px;
+                border: 1px solid var(--white-5);
+            }
+        }
+
+        section#activities {
+            width: 60%;
+
+            .content {
+                height: 320px;
+                overflow: hidden scroll;
+                gap: 8px;
+
+                a {
+                    min-height: 32px;
+                    padding: 0 8px;
+                    border-radius: 3px;
+                    border: 1px solid var(--white-5);
+                    width: calc(100% - 26px);
+                    font-size: 1rem;
+                    text-decoration: none;
+                    color: var(--black);
+                    cursor: pointer;
+                    transition: all .2s;
+
+                    > span, > p {
+                        pointer-events: none;
+                        font-family: "SourceSansPro";
+                    }
+
+                    span.tag { width: 110px }
+
+                    p {
+                        width: calc(100% - 235px);
+                        font-size: 15px;
+                        font-weight: 300;
+                    }
+
+                    span.timestamp {
+                        width: 125px;
+                        font-size: 14px;
+                        font-weight: 300;
+                        text-align: right;
+                    }
+
+                    &.important .tag { color: var(--red-2) }
+                    &:hover, &:focus { background: var(--white-1) }
+                }
+            }
+        }
+    }
+
+    section#docs {
+        min-height: 300px;
+        height: 37.5%;
+    }
+}

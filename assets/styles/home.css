@@ -1,0 +1,153 @@
+body main {
+  min-height: calc(100vh - 65px);
+  height: 100%;
+  gap: 20px;
+}
+body main > div, body main > section {
+  width: 100%;
+}
+body main .quick-links {
+  min-height: 80px;
+  height: 17.5%;
+}
+body main .quick-links .box {
+  width: calc(17.5% - 56px);
+  border-radius: 5px;
+  padding: 0 20px;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 0 10px -3px var(--white-3);
+  transition: all 0.2s;
+}
+body main .quick-links .box .content {
+  gap: 10px;
+  pointer-events: none;
+}
+body main .quick-links .box .content img {
+  width: 30px;
+  height: 30px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+body main .quick-links .box .content h4 span, body main .quick-links .box .content h4 span::before, body main .quick-links .box .content h4 span::after {
+  font-weight: 400;
+  font-size: 14px;
+}
+body main .quick-links .box .content h4 span::before {
+  content: "(";
+}
+body main .quick-links .box .content h4 span::after {
+  content: ")";
+}
+body main .quick-links .box .carret {
+  font-weight: 600;
+  font-size: 20px;
+  translate: none;
+  transition: all 0.2s;
+  pointer-events: none;
+}
+body main .quick-links .box.red {
+  background: var(--red-3b);
+  color: var(--red-3);
+}
+body main .quick-links .box.red .content img {
+  filter: var(--red-3-filter);
+}
+body main .quick-links .box.orange {
+  background: var(--orange-b);
+  color: var(--orange);
+}
+body main .quick-links .box.orange .content img {
+  filter: var(--orange-filter);
+}
+body main .quick-links .box.green {
+  background: var(--green-1b);
+  color: var(--green-1);
+}
+body main .quick-links .box.green .content img {
+  filter: var(--green-1-filter);
+}
+body main .quick-links .box.turquoise {
+  background: var(--turquoise-b);
+  color: var(--turquoise);
+}
+body main .quick-links .box.turquoise .content img {
+  filter: var(--turquoise-filter);
+}
+body main .quick-links .box.blue {
+  background: var(--blue-1b);
+  color: var(--blue-1);
+}
+body main .quick-links .box.blue .content img {
+  filter: var(--blue-1-filter);
+}
+body main .quick-links .box:last-child {
+  width: calc(30% - 56px);
+}
+body main .quick-links .box:hover, body main .quick-links .box:focus {
+  opacity: 82.5%;
+}
+body main .quick-links .box:hover .carret, body main .quick-links .box:focus .carret {
+  transform: translateX(15%);
+}
+body main .two-row-sections {
+  min-height: 300px;
+  height: 37.5%;
+  gap: 20px;
+}
+body main .two-row-sections section#statistics {
+  width: 40%;
+}
+body main .two-row-sections section#statistics .content {
+  background: #f7f9fc;
+  border-radius: 5px;
+  border: 1px solid var(--white-5);
+}
+body main .two-row-sections section#activities {
+  width: 60%;
+}
+body main .two-row-sections section#activities .content {
+  height: 320px;
+  overflow: hidden scroll;
+  gap: 8px;
+}
+body main .two-row-sections section#activities .content a {
+  min-height: 32px;
+  padding: 0 8px;
+  border-radius: 3px;
+  border: 1px solid var(--white-5);
+  width: calc(100% - 26px);
+  font-size: 1rem;
+  text-decoration: none;
+  color: var(--black);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+body main .two-row-sections section#activities .content a > span, body main .two-row-sections section#activities .content a > p {
+  pointer-events: none;
+  font-family: "SourceSansPro";
+}
+body main .two-row-sections section#activities .content a span.tag {
+  width: 110px;
+}
+body main .two-row-sections section#activities .content a p {
+  width: calc(100% - 235px);
+  font-size: 15px;
+  font-weight: 300;
+}
+body main .two-row-sections section#activities .content a span.timestamp {
+  width: 125px;
+  font-size: 14px;
+  font-weight: 300;
+  text-align: right;
+}
+body main .two-row-sections section#activities .content a.important .tag {
+  color: var(--red-2);
+}
+body main .two-row-sections section#activities .content a:hover, body main .two-row-sections section#activities .content a:focus {
+  background: var(--white-1);
+}
+body main section#docs {
+  min-height: 300px;
+  height: 37.5%;
+}/*# sourceMappingURL=home.css.map */

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Home</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../assets/styles/styles.css">
+    <link rel="stylesheet" href="../assets/styles/cheat-sheet.css">
+    <link rel="stylesheet" href="../assets/styles/home.css">
+
+    <script src="../assets/js/app.js"></script>
+
+</head>
+<body>
+
+    <header class="row align-center space-between">
+        <p>Panel Admin</p>
+
+        <div class="container row align-center">
+            <div class="content row align-center">
+                <div class="avatar icon-box-center">
+                    <img src="../assets/images/avatar.png" alt="Avatar">
+                </div>
+
+                <p>Salut toi 😏 USER user</p>
+            </div>
+
+            <button class="logout icon-box-center">
+                <img src="../assets/images/logout.svg" alt="Logout">
+            </button>
+        </div>
+    </header>
+
+    <nav class="column">
+        <section class="column">
+            <h4 class="title">First</h4>
+
+            <ul class="column">
+                <li class="row align-center selected" data-url="home">
+                    <div class="icon icon-box-center">
+                        <img src="../assets/images/home.png" alt="Home">
+                    </div>
+
+                    <p>Overview</p>
+                </li>
+                <li class="row align-center" data-url="settings">
+                    <div class="icon icon-box-center">
+                        <img src="../assets/images/settings.png" alt="Settings">
+                    </div>
+
+                    <p>Settings</p>
+                </li>
+                <li class="row align-center" data-url="apis">
+                    <div class="icon icon-box-center">
+                        <img src="../assets/images/link.png" alt="API.s">
+                    </div>
+
+                    <p>API.s</p>
+                </li>
+            </ul>
+        </section>
+
+        <section class="column">
+            <h4 class="title">Management</h4>
+
+            <ul class="column">
+                <li class="row align-center" data-url="databases">
+                    <div class="icon icon-box-center">
+                        <img src="../assets/images/db.png" alt="Databases">
+                    </div>
+
+                    <p>Databases</p>
+                </li>
+                <li class="row align-center" data-url="servers">
+                    <div class="icon icon-box-center">
+                        <img src="../assets/images/servers.png" alt="Servers">
+                    </div>
+
+                    <p>Servers</p>
+                </li>
+                <li class="row align-center" data-url="Users">
+                    <div class="icon icon-box-center">
+                        <img src="../assets/images/users.png" alt="Users">
+                    </div>
+
+                    <p>Users</p>
+                </li>
+            </ul>
+        </section>
+
+        <section class="column">
+            <h4 class="title">First</h4>
+
+            <ul class="column">
+                <li class="row align-center" data-url="profits">
+                    <div class="icon icon-box-center">
+                        <img src="../assets/images/db.png" alt="Profits">
+                    </div>
+
+                    <p>Profits</p>
+                </li>
+                <li class="row align-center" data-url="docs">
+                    <div class="icon icon-box-center">
+                        <img src="../assets/images/folder.png" alt="Documents">
+                    </div>
+
+                    <p>Documents</p>
+                </li>
+            </ul>
+        </section>
+    </nav>
+
+    <main class="column">
+        <div class="quick-links row space-between">
+            <a class="box row align-center space-between blue" href="#">
+                <div class="content row align-center">
+                    <img src="../assets/images/database.svg" alt="DB">
+                    <h4>Servers <span>27</span></h4>
+                </div>
+
+                <span class="carret">&gt;</span>
+            </a>
+
+            <a class="box row align-center space-between red" href="#">
+                <div class="content row align-center">
+                    <img src="../assets/images/people.svg" alt="Users">
+                    <h4>Users <span>774</span></h4>
+                </div>
+
+                <span class="carret">&gt;</span>
+            </a>
+
+            <a class="box row align-center space-between orange" href="#">
+                <div class="content row align-center">
+                    <img src="../assets/images/link.svg" alt="apis    ">
+                    <h4>API.s <span>14</span></h4>
+                </div>
+
+                <span class="carret">&gt;</span>
+            </a>
+
+            <a class="box row align-center space-between green" href="#">
+                <div class="content row align-center">
+                    <img src="../assets/images/people.svg" alt="docs">
+                    <h4>Documents <span>27</span></h4>
+                </div>
+
+                <span class="carret">&gt;</span>
+            </a>
+
+            <a class="box row align-center space-between turquoise" href="#">
+                <div class="content row align-center">
+                    <img src="../assets/images/wallet.svg" alt="wallet">
+                    <h4>Money management <span>1700€</span></h4>
+                </div>
+
+                <span class="carret">&gt;</span>
+            </a>
+        </div>
+
+        <div class="two-row-sections row">
+            <section class="layout-section" id="statistics">
+                <div class="title row space-between">
+                    <h2>Statistics <span>profits</span></h2>
+                    <a class="link" href="#">Money management</a>
+                </div>
+
+                <div class="content col-center">
+                    <img src="../assets/images/graph.svg" alt="">
+                </div>
+            </section>
+
+            <section class="layout-section" id="activities">
+                <div class="title row space-between">
+                    <h2>Activities</h2>
+                    <a class="link" href="#">See logs</a>
+                </div>
+
+                <hr>
+
+                <div class="content column">
+                    <a class="row align-center" href="#">
+                        <span class="tag">User#5607</span>
+                        <p>Buy a server (15€/m)</p>
+                        <span class="timestamp">21/05/23 2:52 pm</span>
+                    </a>
+                    <a class="row align-center" href="#">
+                        <span class="tag">User#4038</span>
+                        <p>This user has canceled their subscription</p>
+                        <span class="timestamp">21/05/23 2:05 pm</span>
+                    </a>
+                    <a class="row align-center" href="#">
+                        <span class="tag">User#4038</span>
+                        <p>This user cancel subscription</p>
+                        <span class="timestamp">21/05/23 2:00 pm</span>
+                    </a>
+                    <a class="row align-center important" href="#">
+                        <span class="tag">Documents</span>
+                        <p>A document has been modified by [Owner] le criquet (Administateur)</p>
+                        <span class="timestamp">21/05/23 11:00 am</span>
+                    </a>
+                    <a class="row align-center" href="#">
+                        <span class="tag">User#5607</span>
+                        <p>This user has canceled their subscription</p>
+                        <span class="timestamp">21/04/23 7:00 pm</span>
+                    </a>
+                    <a class="row align-center" href="#">
+                        <span class="tag">User#4038</span>
+                        <p>Buy a server (15€/m)</p>
+                        <span class="timestamp">21/04/23 5:19 pm</span>
+                    </a>
+                    <a class="row align-center" href="#">
+                        <span class="tag">User#5607</span>
+                        <p>This user has canceled their subscription</p>
+                        <span class="timestamp">20/04/23 2:52 pm</span>
+                    </a>
+                    <a class="row align-center" href="#">
+                        <span class="tag">User#5607</span>
+                        <p>This user cancel subscription</p>
+                        <span class="timestamp">20/04/23 2:52 pm</span>
+                    </a>
+                    <a class="row align-center" href="#">
+                        <span class="tag">User#4038</span>
+                        <p>Buy a server (15€/m)</p>
+                        <span class="timestamp">20/04/23 2:52 pm</span>
+                    </a>
+                    <a class="row align-center" href="#">
+                        <span class="tag">User#5607</span>
+                        <p>This user has canceled their subscription</p>
+                        <span class="timestamp">20/04/23 2:52 pm</span>
+                    </a>
+                </div>
+            </section>
+        </div>
+
+        <section id="docs">
+            <!--  -->
+        </section>
+    </main>
+
+</body>
+</html>

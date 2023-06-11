@@ -18,11 +18,21 @@
     --red-1: #c60000;
     --red-2: #f00;
     --red-3: #ff333f;
+    --red-3b: #ff333f2a;
+    --red-3-filter: invert(52%) sepia(62%) saturate(7239%) hue-rotate(335deg) brightness(96%) contrast(109%);
     --orange: #ff9533;
+    --orange-b: #ff95332a;
+    --orange-filter: invert(79%) sepia(52%) saturate(4553%) hue-rotate(336deg) brightness(105%) contrast(101%);
     --green-1: #39de54;
+    --green-1b: #39de5444;
+    --green-1-filter: invert(88%) sepia(28%) saturate(6263%) hue-rotate(71deg) brightness(104%) contrast(74%);
     --green-2: #007521;
     --turquoise: #00bfb4;
-    --blue-1: #3366ff;
+    --turquoise-b: #00bfb433;
+    --turquoise-filter: invert(59%) sepia(76%) saturate(2515%) hue-rotate(135deg) brightness(93%) contrast(101%);
+    --blue-1: #36f;
+    --blue-1b: #36f3;
+    --blue-1-filter: invert(29%) sepia(100%) saturate(2211%) hue-rotate(219deg) brightness(102%) contrast(102%);
     --blue-2: #00498d;
 }
 
@@ -54,15 +64,15 @@ a, button, input, textarea, fieldset { outline: none }
 a, button, input[type="radio"], input[type="checkbox"] { cursor: pointer }
 
 ::-webkit-scrollbar {
-    background: var(--white-1);
+    background: var(--grey-3);
     width: 12px;
     height: 12px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--grey-3);
+    background: var(--white-1);
     border-radius: 6px;
-    border: 2px solid var(--white-1);
+    border: 2px solid var(--grey-3);
 }
 
 svg:not(:root) { display: block }
@@ -159,13 +169,14 @@ body {
     nav {
         width: $nav-width;
         height: 100%;
-        position: absolute;
+        position: fixed;
         background: var(--grey-3);
         padding-top: 100px;
         transition: all .4s;
         overflow: hidden;
         top: 0;
         left: 0;
+        box-shadow: 8px 0 20px -4px var(--white-6);
 
         section {
             position: absolute;
@@ -241,12 +252,13 @@ body {
         &:hover { width: 250px }
     }
 
-    main {
+    main:not(#login) {
         position: relative;
-        width: calc(100% - $nav-width);
+        width: calc(100% - $nav-width * 2.2 - 2rem);
         height: calc(100% - $header-height);
         left: $nav-width;
         transition: all .4s;
+        padding: 2rem 2rem 10px calc(1.2 * $nav-width);
     }
 
     form {
@@ -290,6 +302,76 @@ body {
             &.style-1 input {
                 border: 1px solid var(--white-6);
                 &:focus { border-color: var(--grey-5) }
+            }
+        }
+    }
+
+    section.layout-section {
+        background: var(--white);
+        border-radius: 10px;
+        border-top: 8px solid var(--grey-3);
+        margin-top: 8px;
+        box-shadow: 0 0 10px -3px var(--white-3);
+        padding: 20px 24px;
+
+        .title {
+            color: var(--black);
+
+            h2 {
+                font-weight: 400;
+                font-size: 1.25rem;
+
+                span {
+                    font-size: 14px;
+                    font-weight: 275;
+
+                    &::before, &::after { font-size: 13px }
+                    &::before { content: "(" }
+                    &::after { content: ")" }
+                }
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+                font-weight: 200;
+                font-size: 1rem;
+                cursor: pointer;
+                opacity: 1;
+                transition: all .2s;
+
+                &::after {
+                    content: ">";
+                    position: relative;
+                    font-size: 1.25rem;
+                    font-weight: 600;
+                    margin-left: 10px;
+                    top: 2px;
+                }
+
+                &:hover, &:focus { opacity: 75% }
+            }
+        }
+
+        hr {
+            height: 1px;
+            background-color: var(--white-3);
+            border: none;
+        }
+
+        .content {
+            margin-top: .5rem;
+
+            &::-webkit-scrollbar {
+                border-radius: 4px;
+                background: var(--white-3);
+                width: 8px;
+                height: 8px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background: var(--grey-3);
+                border: none;
             }
         }
     }
