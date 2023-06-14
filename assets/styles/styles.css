@@ -151,9 +151,9 @@ body header {
   border-bottom-left-radius: 20px;
   padding: 0 1rem 0 2rem;
   color: var(--white);
-  box-shadow: -5px 5px 12px -1px var(--white-3);
+  box-shadow: -5px 5px 20px -8px var(--grey-3);
   transition: all 0.4s;
-  z-index: 10;
+  z-index: 11;
 }
 body header > p {
   font-size: 20px;
@@ -201,6 +201,7 @@ body nav {
   top: 0;
   left: 0;
   box-shadow: 8px 0 20px -4px var(--white-6);
+  z-index: 10;
 }
 body nav section {
   position: absolute;
@@ -381,6 +382,67 @@ body section.layout-section hr {
 }
 body section.layout-section .content {
   margin-top: 0.5rem;
+}
+body section.layout-section .content:is(ul) {
+  display: table;
+  list-style: none;
+  width: 100%;
+  border-collapse: collapse;
+}
+body section.layout-section .content:is(ul) li {
+  display: table-row;
+  position: relative;
+}
+body section.layout-section .content:is(ul) li span {
+  text-align: left;
+  font-weight: 300;
+  display: table-cell;
+  font-size: 1rem;
+  line-height: 3.2rem;
+}
+body section.layout-section .content:is(ul) li span a {
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+  opacity: 1;
+}
+body section.layout-section .content:is(ul) li span a:hover, body section.layout-section .content:is(ul) li span a:focus {
+  opacity: 0.8;
+}
+body section.layout-section .content:is(ul) li span:first-child {
+  padding-left: 1.2rem;
+}
+body section.layout-section .content:is(ul) li span:first-child a {
+  -webkit-text-decoration: underline 1px solid transparent;
+          text-decoration: underline 1px solid transparent;
+  color: inherit;
+}
+body section.layout-section .content:is(ul) li span:first-child a:hover, body section.layout-section .content:is(ul) li span:first-child a:focus {
+  text-decoration-color: initial;
+}
+body section.layout-section .content:is(ul) li span:last-child {
+  text-align: right;
+  padding-right: 1.2rem;
+}
+body section.layout-section .content:is(ul) li span:last-child a {
+  color: var(--blue-2);
+}
+body section.layout-section .content:is(ul) li::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  top: 0.25rem;
+  height: 2.5rem;
+  border: 1px solid var(--white-5);
+  border-radius: 5px;
+  pointer-events: none;
+}
+body section.layout-section .content:is(ul) li.head span {
+  line-height: 5rem;
+}
+body section.layout-section .content:is(ul) li.head::before {
+  top: 1.25rem;
 }
 body section.layout-section .content::-webkit-scrollbar {
   border-radius: 4px;

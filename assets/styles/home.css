@@ -3,12 +3,10 @@ body main {
   height: 100%;
   gap: 20px;
 }
-body main > div, body main > section {
-  width: 100%;
-}
 body main .quick-links {
   min-height: 80px;
   height: 17.5%;
+  width: 100%;
 }
 body main .quick-links .box {
   width: calc(17.5% - 56px);
@@ -150,4 +148,5 @@ body main .two-row-sections section#activities .content a:hover, body main .two-
 body main section#docs {
   min-height: 300px;
   height: 37.5%;
+  width: calc(100% - 48px);
 }/*# sourceMappingURL=home.css.map */

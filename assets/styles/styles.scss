@@ -126,9 +126,9 @@ body {
         border-bottom-left-radius: 20px;
         padding: 0 1rem 0 2rem;
         color: var(--white);
-        box-shadow: -5px 5px 12px -1px var(--white-3);
+        box-shadow: -5px 5px 20px -8px var(--grey-3);
         transition: all .4s;
-        z-index: 10;
+        z-index: 11;
 
         > p { font-size: 20px }
 
@@ -178,6 +178,7 @@ body {
         top: 0;
         left: 0;
         box-shadow: 8px 0 20px -4px var(--white-6);
+        z-index: 10;
 
         section {
             position: absolute;
@@ -362,6 +363,70 @@ body {
 
         .content {
             margin-top: .5rem;
+
+            &:is(ul) {
+                display: table;
+                list-style: none;
+                width: 100%;
+                border-collapse: collapse;
+
+                li {
+                    display: table-row;
+                    position: relative;
+
+                    span {
+                        text-align: left;
+                        font-weight: 300;
+                        display: table-cell;
+                        font-size: 1rem;
+                        line-height: 3.2rem;
+
+                        a {
+                            cursor: pointer;
+                            text-decoration: none;
+                            transition: all .2s;
+                            opacity: 1;
+
+                            &:hover, &:focus { opacity: .8 }
+                        }
+
+                        &:first-child {
+                            padding-left: 1.2rem;
+
+                            a {
+                                text-decoration: underline 1px solid transparent;
+                                color: inherit;
+
+                                &:hover, &:focus { text-decoration-color: initial }
+                            }
+                        }
+
+                        &:last-child {
+                            text-align: right;
+                            padding-right: 1.2rem;
+
+                            a { color: var(--blue-2) }
+                        }
+                    }
+
+                    &::before {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        width: 100%;
+                        top: .25rem;
+                        height: 2.5rem;
+                        border: 1px solid var(--white-5);
+                        border-radius: 5px;
+                        pointer-events: none;
+                    }
+
+                    &.head {
+                        span { line-height: 5rem }
+                        &::before { top: 1.25rem }
+                    }
+                }
+            }
 
             &::-webkit-scrollbar {
                 border-radius: 4px;
