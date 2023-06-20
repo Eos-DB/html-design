@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Docuements</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../assets/styles/styles.css">
+    <link rel="stylesheet" href="../assets/styles/cheat-sheet.css">
+
+    <script src="../assets/js/app.js"></script>
+
+</head>
+<body>
+
+    <header class="row align-center space-between">
+        <p>Panel Admin</p>
+
+        <div class="container row align-center">
+            <div class="content row align-center">
+                <div class="avatar icon-box-center">
+                    <img src="../assets/images/avatar.png" alt="Avatar">
+                </div>
+
+                <p>Salut toi 😏 USER user</p>
+            </div>
+
+            <button class="logout icon-box-center">
+                <img src="../assets/images/logout.svg" alt="Logout">
+            </button>
+        </div>
+    </header>
+
+    <nav class="column">
+        <section class="column">
+            <h4 class="title">First</h4>
+
+            <ul class="column">
+                <li class="row align-center selected" data-url="home">
+                    <div class="icon icon-box-center">
+                        <img src="../assets/images/home.png" alt="Home">
+                    </div>
+
+                    <p>Overview</p>
+                </li>
+                <li class="row align-center" data-url="settings">
+                    <div class="icon icon-box-center">
+                        <img src="../assets/images/settings.png" alt="Settings">
+                    </div>
+
+                    <p>Settings</p>
+                </li>
+                <li class="row align-center" data-url="apis">
+                    <div class="icon icon-box-center">
+                        <img src="../assets/images/link.png" alt="API.s">
+                    </div>
+
+                    <p>API.s</p>
+                </li>
+            </ul>
+        </section>
+
+        <section class="column">
+            <h4 class="title">Management</h4>
+
+            <ul class="column">
+                <li class="row align-center" data-url="databases">
+                    <div class="icon icon-box-center">
+                        <img src="../assets/images/db.png" alt="Databases">
+                    </div>
+
+                    <p>Databases</p>
+                </li>
+                <li class="row align-center" data-url="servers">
+                    <div class="icon icon-box-center">
+                        <img src="../assets/images/servers.png" alt="Servers">
+                    </div>
+
+                    <p>Servers</p>
+                </li>
+                <li class="row align-center" data-url="Users">
+                    <div class="icon icon-box-center">
+                        <img src="../assets/images/users.png" alt="Users">
+                    </div>
+
+                    <p>Users</p>
+                </li>
+            </ul>
+        </section>
+
+        <section class="column">
+            <h4 class="title">First</h4>
+
+            <ul class="column">
+                <li class="row align-center" data-url="profits">
+                    <div class="icon icon-box-center">
+                        <img src="../assets/images/db.png" alt="Profits">
+                    </div>
+
+                    <p>Profits</p>
+                </li>
+                <li class="row align-center" data-url="docs">
+                    <div class="icon icon-box-center">
+                        <img src="../assets/images/folder.png" alt="Documents">
+                    </div>
+
+                    <p>Documents</p>
+                </li>
+            </ul>
+        </section>
+    </nav>
+
+    <main>
+        <section class="layout-section" id="docs">
+            <div class="title row space-between">
+                <h2>Documents</h2>
+
+                <div class="buttons row">
+                    <button class="row-reverse align-center" type="button">
+                        <span>Add document</span>
+                        <img src="../assets/images/plus.svg" alt="Add document">
+                    </button>
+
+                    <div class="search row align-center space-between">
+                        <label for="search">
+                            <button type="button">
+                                <img src="../assets/images/search.svg" alt="Search">
+                            </button>
+                        </label>
+
+                        <input type="text" name="search" id="search" placeholder="Search...">
+
+                        <button class="clear">
+                            <img src="../assets/images/plus.svg" alt="Clear text">
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <ul class="content">
+                <li class="head">
+                    <span>Name</span>
+                    <span>Categories</span>
+                    <span>Author</span>
+                    <span>Date & time</span>
+                    <span>Download</span>
+                </li>
+                <li>
+                    <span><a href="#">Internal Policies</a></span>
+                    <span>Administrative • Internal</span>
+                    <span>[Owner] Le criquet</span>
+                    <span>26/05/2023 13:56</span>
+                    <span>
+                        <a href="#">Download</a>
+
+                        <button type="button" class="edit">
+                            <img src="../assets/images/edit.svg" alt="Edit">
+                        </button>
+                    </span>
+                </li>
+                <li>
+                    <span><a href="#">Employment contract</a></span>
+                    <span>Administrative • Internal</span>
+                    <span>[Owner] Le criquet</span>
+                    <span>26/05/2023 2:34</span>
+                    <span>
+                        <a href="#">Download</a>
+
+                        <button type="button" class="edit">
+                            <img src="../assets/images/edit.svg" alt="Edit">
+                        </button>
+                    </span>
+                </li>
+                <li>
+                    <span><a href="#">Staff register</a></span>
+                    <span>Administrative • Internal</span>
+                    <span>[Owner] Le criquet</span>
+                    <span>24/05/2023 10:56</span>
+                    <span>
+                        <a href="#">Download</a>
+
+                        <button type="button" class="edit">
+                            <img src="../assets/images/edit.svg" alt="Edit">
+                        </button>
+                    </span>
+                </li>
+                <li>
+                    <span><a href="#">Commercial contracts</a></span>
+                    <span>Administrative • Internal • External</span>
+                    <span>[Owner] Le criquet</span>
+                    <span>23/05/2023 19:14</span>
+                    <span>
+                        <a href="#">Download</a>
+
+                        <button type="button" class="edit">
+                            <img src="../assets/images/edit.svg" alt="Edit">
+                        </button>
+                    </span>
+                </li>
+                <li>
+                    <span><a href="#">Estimate</a></span>
+                    <span>Administrative • Internal • External</span>
+                    <span>[Owner] Le criquet</span>
+                    <span>23/05/2023 19:14</span>
+                    <span>
+                        <a href="#">Download</a>
+
+                        <button type="button" class="edit">
+                            <img src="../assets/images/edit.svg" alt="Edit">
+                        </button>
+                    </span>
+                </li>
+                <li>
+                    <span><a href="#">Internal Policies</a></span>
+                    <span>Administrative • Internal</span>
+                    <span>[Owner] Le criquet</span>
+                    <span>26/05/2023 13:56</span>
+                    <span>
+                        <a href="#">Download</a>
+
+                        <button type="button" class="edit">
+                            <img src="../assets/images/edit.svg" alt="Edit">
+                        </button>
+                    </span>
+                </li>
+                <li>
+                    <span><a href="#">Employment contract</a></span>
+                    <span>Administrative • Internal</span>
+                    <span>[Owner] Le criquet</span>
+                    <span>26/05/2023 2:34</span>
+                    <span>
+                        <a href="#">Download</a>
+
+                        <button type="button" class="edit">
+                            <img src="../assets/images/edit.svg" alt="Edit">
+                        </button>
+                    </span>
+                </li>
+                <li>
+                    <span><a href="#">Staff register</a></span>
+                    <span>Administrative • Internal</span>
+                    <span>[Owner] Le criquet</span>
+                    <span>24/05/2023 10:56</span>
+                    <span>
+                        <a href="#">Download</a>
+
+                        <button type="button" class="edit">
+                            <img src="../assets/images/edit.svg" alt="Edit">
+                        </button>
+                    </span>
+                </li>
+                <li>
+                    <span><a href="#">Commercial contracts</a></span>
+                    <span>Administrative • Internal • External</span>
+                    <span>[Owner] Le criquet</span>
+                    <span>23/05/2023 19:14</span>
+                    <span>
+                        <a href="#">Download</a>
+
+                        <button type="button" class="edit">
+                            <img src="../assets/images/edit.svg" alt="Edit">
+                        </button>
+                    </span>
+                </li>
+                <li>
+                    <span><a href="#">Estimate</a></span>
+                    <span>Administrative • Internal • External</span>
+                    <span>[Owner] Le criquet</span>
+                    <span>23/05/2023 19:14</span>
+                    <span>
+                        <a href="#">Download</a>
+
+                        <button type="button" class="edit">
+                            <img src="../assets/images/edit.svg" alt="Edit">
+                        </button>
+                    </span>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+</body>
+</html>

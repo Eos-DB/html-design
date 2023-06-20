@@ -13,6 +13,7 @@
   --white-3: #dadde7;
   --white-2: #f5f5f9;
   --white-1: #f5f5fc;
+  --white-0: #f6fafd;
   --white: #fff;
   --red-1: #c60000;
   --red-2: #f00;
@@ -33,6 +34,7 @@
   --blue-1b: #36f3;
   --blue-1-filter: invert(29%) sepia(100%) saturate(2211%) hue-rotate(219deg) brightness(102%) contrast(102%);
   --blue-2: #00498d;
+  --blue-2-filter: invert(20%) sepia(84%) saturate(1787%) hue-rotate(191deg) brightness(86%) contrast(105%);
 }
 
 body, div, span, applet, object, iframe,
@@ -375,6 +377,57 @@ body section.layout-section .title a::after {
 body section.layout-section .title a:hover, body section.layout-section .title a:focus {
   opacity: 75%;
 }
+body section.layout-section .title .buttons {
+  gap: 1.2rem;
+}
+body section.layout-section .title .buttons > button, body section.layout-section .title .buttons .search {
+  padding: 7px 15px;
+  gap: 15px;
+  background: var(--white-0);
+  border-radius: 3px;
+  border: 1px solid var(--white-5);
+}
+body section.layout-section .title .buttons > button span, body section.layout-section .title .buttons .search span {
+  pointer-events: none;
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: var(--grey-6);
+}
+body section.layout-section .title .buttons button {
+  cursor: pointer;
+  transition: all 0.2s;
+  opacity: 1;
+}
+body section.layout-section .title .buttons button:hover, body section.layout-section .title .buttons button:focus {
+  opacity: 75%;
+}
+body section.layout-section .title .buttons .search {
+  gap: 10px;
+}
+body section.layout-section .title .buttons .search button, body section.layout-section .title .buttons .search input {
+  height: 100%;
+  background: none;
+  border: none;
+  padding: 0;
+}
+body section.layout-section .title .buttons .search button:hover, body section.layout-section .title .buttons .search button:focus {
+  opacity: 75%;
+}
+body section.layout-section .title .buttons .search input {
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: var(--grey-4);
+  line-height: 1.2rem;
+}
+body section.layout-section .title .buttons .search input::-moz-placeholder {
+  color: var(--grey-6);
+}
+body section.layout-section .title .buttons .search input::placeholder {
+  color: var(--grey-6);
+}
+body section.layout-section .title .buttons .search .clear {
+  transform: rotate(45deg);
+}
 body section.layout-section hr {
   height: 1px;
   background-color: var(--white-3);
@@ -426,6 +479,21 @@ body section.layout-section .content:is(ul) li span:last-child {
 }
 body section.layout-section .content:is(ul) li span:last-child a {
   color: var(--blue-2);
+}
+body section.layout-section .content:is(ul) li span:last-child button.edit {
+  filter: var(--blue-2-filter);
+  background: none;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  opacity: 1;
+  transition: all 0.2s;
+  height: 2.6rem;
+  position: relative;
+  top: 4px;
+}
+body section.layout-section .content:is(ul) li span:last-child button.edit:hover, body section.layout-section .content:is(ul) li span:last-child button.edit:focus {
+  opacity: 0.8;
 }
 body section.layout-section .content:is(ul) li::before {
   content: "";
