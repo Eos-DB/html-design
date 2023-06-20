@@ -81,7 +81,7 @@
 
                     <p>Servers</p>
                 </li>
-                <li class="row align-center selected" data-url="users">
+                <li class="row align-center" data-url="users">
                     <div class="icon icon-box-center">
                         <img src="../assets/images/users.png" alt="Users">
                     </div>
@@ -102,7 +102,7 @@
 
                     <p>Profits</p>
                 </li>
-                <li class="row align-center" data-url="docs">
+                <li class="row align-center selected" data-url="docs">
                     <div class="icon icon-box-center">
                         <img src="../assets/images/folder.png" alt="Documents">
                     </div>
@@ -113,10 +113,10 @@
         </section>
     </nav>
 
-    <main>
-        <section class="layout-section" id="docs">
+    <main class="column align-center">
+        <section class="layout-section hidden" id="docs">
             <div class="title row align-center space-between">
-                <h2>Users</h2>
+                <h2>Documents</h2>
 
                 <div class="buttons row">
                     <button class="row-reverse align-center" type="button">
@@ -146,7 +146,7 @@
                     <span>Categories</span>
                     <span>Author</span>
                     <span>Date & time</span>
-                    <span>Download</span>
+                    <span>Download || Edit</span>
                 </li>
                 <li>
                     <span><a href="#">Internal Policies</a></span>
@@ -279,6 +279,83 @@
                     </span>
                 </li>
             </ul>
+        </section>
+
+        <section class="popup style-1 active">
+            <h2>Add a document</h2>
+
+            <form method="post">
+                <div class="input-box style-2">
+                    <label for="name">Document name</label>
+                    <input type="text" id="name" placeholder="Name of the document">
+                </div>
+
+                <div class="input-box style-2">
+                    <label for="keywords">Search keywords</label>
+                    <input type="text" id="keywords" placeholder="Statistics, Commercial...">
+                </div>
+
+                <div class="input-box style-2">
+                    <label for="categories">Categories</label>
+
+                    <select name="categories" id="categories">
+                        <option value="0" disabled selected>Choose categories</option>
+                        <option value="1">Cat'1</option>
+                        <option value="1">P*te</option>
+                        <option value="2">Gourgandine</option>
+                        <option value="3">Prostituée</option>
+                        <option value="4">Catégorie lol</option>
+                    </select>
+                </div>
+
+                <div class="input-box style-2">
+                    <label for="permissions">Who can edit it?</label>
+
+                    <select name="permissions" id="permissions">
+                        <option value="0" disabled selected>Choose the roles</option>
+                        <option value="1">Only me</option>
+                        <option value="2">Administrators</option>
+                        <option value="3">Everyone</option>
+                    </select>
+                </div>
+
+                <div class="input-box file">
+                    <p>Choose your files</p>
+
+                    <div class="drop-area">
+                        <span class="btn row-reverse align-center justify-center">
+                            <span>Add file</span>
+                            <img src="../assets/images/plus.svg" alt="Add file">
+                        </span>
+
+                        <input type="file" name="docs" id="docs">
+                    </div>
+                </div>
+
+                <div class="input-box">
+                    <input type="submit" value="Send document">
+                </div>
+            </form>
+        </section>
+
+        <section class="popup style-2">
+            <div class="content col-center">
+                <div class="title">
+                    <h1>Confirmation</h1>
+                    <span class="date">26/05/2023 19:49</span>
+                </div>
+
+                <p>
+                    When this document is posted, please exercise caution as only individuals with
+                    designated roles will have permission to view it. Please ensure compliance with
+                    confidentiality guidelines and share the information only with authorized members.
+                </p>
+
+                <div class="buttons col-center">
+                    <button type="button">Cancel</button>
+                    <button type="button">I'm sure, continue</button>
+                </div>
+            </div>
         </section>
     </main>
 

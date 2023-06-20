@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url(../fonts/index.css);
 :root {
   --black: #000;
@@ -282,6 +283,10 @@ body main:not(#login) {
   transition: all 0.4s;
   padding: 2rem 2rem 10px 60px;
 }
+body main#docs > section.layout-section {
+  width: calc(100% - 48px);
+  margin-bottom: 1.5rem;
+}
 body form {
   gap: 1rem;
 }
@@ -289,8 +294,13 @@ body form .input-box {
   height: 46px;
   width: 300px;
   padding: 0;
+  gap: 5px;
 }
-body form .input-box input {
+body form .input-box label {
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+body form .input-box > input, body form .input-box > select {
   width: calc(100% - 24px);
   height: calc(100% - 12px);
   padding: 6px 12px;
@@ -301,8 +311,9 @@ body form .input-box input {
   background: var(--white);
   transition: all 0.2s;
   box-shadow: 0 0 10px -3px var(--white-4);
+  border: 1px solid var(--white-6);
 }
-body form .input-box input:is([type=submit]) {
+body form .input-box > input:is([type=submit]), body form .input-box > select:is([type=submit]) {
   background: var(--grey-3);
   font-size: 1.1rem;
   color: var(--white);
@@ -310,27 +321,71 @@ body form .input-box input:is([type=submit]) {
   opacity: 1;
   box-shadow: 0 0 10px -3px var(--grey-4);
 }
-body form .input-box input:is([type=submit]):hover, body form .input-box input:is([type=submit]):focus {
+body form .input-box > input:is([type=submit]):hover, body form .input-box > input:is([type=submit]):focus, body form .input-box > select:is([type=submit]):hover, body form .input-box > select:is([type=submit]):focus {
   opacity: 0.9;
 }
-body form .input-box input::-moz-placeholder {
+body form .input-box > input::-moz-placeholder, body form .input-box > select::-moz-placeholder {
   font-family: "Poppins";
   font-weight: 400;
   color: var(--grey-4);
 }
-body form .input-box input::placeholder {
+body form .input-box > input::placeholder, body form .input-box > input:is(select), body form .input-box > select::placeholder, body form .input-box > select:is(select) {
   font-family: "Poppins";
   font-weight: 400;
   color: var(--grey-4);
 }
-body form .input-box.style-1 input {
-  border: 1px solid var(--white-6);
+body form .input-box > input option:disabled, body form .input-box > select option:disabled {
+  color: var(--grey-6);
 }
-body form .input-box.style-1 input:focus {
+body form .input-box > input:focus, body form .input-box > select:focus {
   border-color: var(--grey-5);
 }
-body main:not(#home) section {
-  height: calc(100vh - 143px - 3.2rem);
+body form .input-box select {
+  width: 100%;
+}
+body form .input-box.file {
+  height: 125px;
+  margin: 14px 0 8px;
+}
+body form .input-box.file p {
+  font-size: 1.1rem;
+  font-weight: 300;
+  margin-bottom: 5px;
+}
+body form .input-box.file .drop-area {
+  display: flex;
+  align-items: center;
+  width: calc(100% - 24px);
+  height: calc(100% - 12px - 2rem);
+  padding: 6px 12px;
+  border: 2px dashed var(--white-6);
+  border-radius: 3px;
+  transition: all 0.2s;
+  position: relative;
+}
+body form .input-box.file .drop-area span.btn {
+  flex-shrink: 0;
+  font-size: 1.1rem;
+  width: 100%;
+  gap: 1rem;
+  color: var(--grey-4);
+}
+body form .input-box.file .drop-area input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  opacity: 0;
+  outline: 0;
+}
+body form .input-box.style-2 {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  height: 64px;
+  margin-top: 1rem;
 }
 body section.layout-section {
   background: var(--white);
@@ -339,7 +394,6 @@ body section.layout-section {
   margin-top: 8px;
   box-shadow: 0 0 10px -3px var(--white-3);
   padding: 20px 24px;
-  overflow: hidden;
 }
 body section.layout-section .title {
   color: var(--black);
@@ -526,6 +580,94 @@ body section.layout-section .content::-webkit-scrollbar-thumb {
   background: var(--grey-3);
   border: none;
 }
+body section.layout-section.hidden {
+  display: none;
+}
+body section.popup {
+  display: none;
+}
+body section.popup.style-1, body section.popup.style-2 .content {
+  background: var(--white);
+  padding: 36px 20px;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+body section.popup.style-1 {
+  border-radius: 10px;
+  border-top: 8px solid var(--grey-3);
+  margin-top: 8px;
+  box-shadow: 0 0 10px -3px var(--white-3);
+  width: 500px;
+}
+body section.popup.style-2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6666666667);
+  z-index: 20;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+body section.popup.style-2 .content {
+  max-height: 600px;
+  max-width: 600px;
+}
+body section.popup.style-2 .content .title {
+  text-align: center;
+}
+body section.popup.style-2 .content .title h1 {
+  text-transform: uppercase;
+  color: var(--grey-3);
+  font-size: 1.9rem;
+  padding: 4px 0;
+}
+body section.popup.style-2 .content .title span.date {
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+body section.popup.style-2 .content p {
+  margin: 2rem 0;
+  padding: 0 2rem;
+  text-align: center;
+  max-width: 468px;
+}
+body section.popup.style-2 .content .buttons {
+  gap: 12px;
+}
+body section.popup.style-2 .content .buttons button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 4px;
+  color: var(--white);
+  opacity: 1;
+  transition: all 0.2s;
+  width: 250px;
+  height: 50px;
+  font-size: 1.1rem;
+  font-family: "Poppins";
+  font-weight: 400;
+}
+body section.popup.style-2 .content .buttons button:first-child {
+  background: var(--grey-3);
+}
+body section.popup.style-2 .content .buttons button:first-child:hover, body section.popup.style-2 .content .buttons button:first-child:focus {
+  opacity: 87.5%;
+}
+body section.popup.style-2 .content .buttons button:last-child {
+  background: var(--black);
+}
+body section.popup.style-2 .content .buttons button:last-child:hover, body section.popup.style-2 .content .buttons button:last-child:focus {
+  opacity: 0.8;
+}
+body section.popup.active {
+  display: flex;
+}
 body.extended header {
   width: calc(100% - 60px - 250px);
 }
@@ -544,7 +686,7 @@ body.extended main {
     width: 100vw;
     height: 100vh;
   }
-  body::after {
+  body::before, body::after {
     content: "NULOS";
     position: absolute;
     top: 50%;
@@ -552,6 +694,10 @@ body.extended main {
     transform: translate(-50%, -50%);
     color: var(--white);
     font-size: min(5vw, 5vh);
+  }
+  body::after {
+    content: "Achète-toi un PC";
+    transform: translate(-50%, 50%);
   }
   @supports (width: min(1px, 1dvw)) {
     body, body main {

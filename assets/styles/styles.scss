@@ -265,6 +265,11 @@ body {
         padding: 2rem 2rem 10px calc(1.2 * $nav-width);
     }
 
+    main#docs { > section.layout-section {
+        width: calc(100% - 48px);
+        margin-bottom: 1.5rem;
+    } }
+
     form {
         gap: 1rem;
 
@@ -272,8 +277,14 @@ body {
             height: 46px;
             width: 300px;
             padding: 0;
+            gap: 5px;
 
-            input {
+            label {
+                font-size: 1.1rem;
+                font-weight: 300;
+            }
+
+            > input, > select {
                 width: calc(100% - 24px);
                 height: calc(100% - 12px);
                 padding: 6px 12px;
@@ -284,6 +295,7 @@ body {
                 background: var(--white);
                 transition: all .2s;
                 box-shadow: 0 0 10px -3px var(--white-4);
+                border: 1px solid var(--white-6);
 
                 &:is([type="submit"]) {
                     background: var(--grey-3);
@@ -296,22 +308,68 @@ body {
                     &:hover, &:focus { opacity: .9 }
                 }
 
-                &::placeholder {
+                &::placeholder, &:is(select) {
                     font-family: "Poppins";
                     font-weight: 400;
                     color: var(--grey-4);
                 }
-            }
 
-            &.style-1 input {
-                border: 1px solid var(--white-6);
+                option:disabled { color: var(--grey-6) }
                 &:focus { border-color: var(--grey-5) }
             }
-        }
-    }
 
-    main:not(#home) section {
-        height: calc(100vh - $header-height * 2.2 - 3.2rem);
+            select { width: 100% }
+
+            &.file {
+                height: 125px;
+                margin: 14px 0 8px;
+
+                p {
+                    font-size: 1.1rem;
+                    font-weight: 300;
+                    margin-bottom: 5px;
+                }
+
+                .drop-area {
+                    display: flex;
+                    align-items: center;
+                    width: calc(100% - 24px);
+                    height: calc(100% - 12px - 2rem);
+                    padding: 6px 12px;
+                    border: 2px dashed var(--white-6);
+                    border-radius: 3px;
+                    transition: all .2s;
+                    position: relative;
+
+                    span.btn {
+                        flex-shrink: 0;
+                        font-size: 1.1rem;
+                        width: 100%;
+                        gap: 1rem;
+                        color: var(--grey-4);
+                    }
+
+                    input {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 100%;
+                        width: 100%;
+                        cursor: pointer;
+                        opacity: 0;
+                        outline: 0;
+                    }
+                }
+            }
+
+            &.style-2 {
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: space-between;
+                height: 64px;
+                margin-top: 1rem;
+            }
+        }
     }
 
     section.layout-section {
@@ -321,7 +379,6 @@ body {
         margin-top: 8px;
         box-shadow: 0 0 10px -3px var(--white-3);
         padding: 20px 24px;
-        overflow: hidden;
 
         .title {
             color: var(--black);
@@ -513,6 +570,101 @@ body {
                 border: none;
             }
         }
+
+        &.hidden { display: none }
+    }
+
+    section.popup {
+        display: none;
+
+        &.style-1, &.style-2 .content {
+            background: var(--white);
+            padding: 36px 20px;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        &.style-1 {
+            border-radius: 10px;
+            border-top: 8px solid var(--grey-3);
+            margin-top: 8px;
+            box-shadow: 0 0 10px -3px var(--white-3);
+            width: 500px;
+        }
+
+        &.style-2 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #000a;
+            z-index: 20;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .content {
+                max-height: 600px;
+                max-width: 600px;
+
+                .title {
+                    text-align: center;
+
+                    h1 {
+                        text-transform: uppercase;
+                        color: var(--grey-3);
+                        font-size: 1.9rem;
+                        padding: 4px 0;
+                    }
+
+                    span.date {
+                        font-size: .9rem;
+                        font-weight: 300;
+                    }
+                }
+
+                p {
+                    margin: 2rem 0;
+                    padding: 0 2rem;
+                    text-align: center;
+                    max-width: 468px;
+                }
+
+                .buttons {
+                    gap: 12px;
+
+                    button {
+                        border: none;
+                        outline: none;
+                        cursor: pointer;
+                        border-radius: 4px;
+                        color: var(--white);
+                        opacity: 1;
+                        transition: all .2s;
+                        width: 250px;
+                        height: 50px;
+                        font-size: 1.1rem;
+                        font-family: "Poppins";
+                        font-weight: 400;
+
+                        &:first-child {
+                            background: var(--grey-3);
+                            &:hover, &:focus { opacity: 87.5% }
+                        }
+
+                        &:last-child {
+                            background: var(--black);
+                            &:hover, &:focus { opacity: .8 }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.active { display: flex }
     }
 
     &.extended {
@@ -534,7 +686,7 @@ body {
         width: 100vw;
         height: 100vh;
 
-        &::after {
+        &::before, &::after {
             content: "NULOS";
             position: absolute;
             top: 50%;
@@ -542,6 +694,11 @@ body {
             transform: translate(-50%, -50%);
             color: var(--white);
             font-size: min(5vw, 5vh);
+        }
+
+        &::after {
+            content: "Achète-toi un PC";
+            transform: translate(-50%, 50%);
         }
 
         @supports (width: min(1px, 1dvw)) { &, & main {
