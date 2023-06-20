@@ -310,6 +310,10 @@ body {
         }
     }
 
+    main:not(#home) section {
+        height: calc(100vh - $header-height * 2.2 - 3.2rem);
+    }
+
     section.layout-section {
         background: var(--white);
         border-radius: 10px;
@@ -317,6 +321,7 @@ body {
         margin-top: 8px;
         box-shadow: 0 0 10px -3px var(--white-3);
         padding: 20px 24px;
+        overflow: hidden;
 
         .title {
             color: var(--black);
@@ -517,5 +522,31 @@ body {
             left: 250px;
             width: calc(100% - 250px);
         }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    :not(:root, html, body) { display: none !important }
+
+    body {
+        display: flex;
+        background: var(--black);
+        width: 100vw;
+        height: 100vh;
+
+        &::after {
+            content: "NULOS";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--white);
+            font-size: min(5vw, 5vh);
+        }
+
+        @supports (width: min(1px, 1dvw)) { &, & main {
+            width: 100dvw;
+            height: 100dvh;
+        } }
     }
 }
