@@ -1,8 +1,8 @@
-body {
+body.login {
   height: 100%;
   overflow: hidden;
 }
-body .corner {
+body.login .corner {
   position: absolute;
   width: 65%;
   height: 85%;
@@ -10,11 +10,11 @@ body .corner {
   left: 0;
   z-index: -1;
 }
-body .corner img {
+body.login .corner img {
   width: 100%;
   height: 100%;
 }
-body .corner h2 {
+body.login .corner h2 {
   position: absolute;
   top: 1rem;
   left: 1rem;
@@ -22,51 +22,51 @@ body .corner h2 {
   color: var(--white);
 }
 @media screen and (max-width: 900px) {
-  body .corner {
+  body.login .corner {
     width: 60%;
     height: 80%;
   }
 }
 @media screen and (max-width: 800px) {
-  body .corner {
+  body.login .corner {
     width: 65%;
     height: 75%;
   }
 }
 @media screen and (max-width: 700px) {
-  body .corner {
+  body.login .corner {
     width: 70%;
     height: 70%;
   }
 }
 @media screen and (max-width: 600px) {
-  body .corner {
+  body.login .corner {
     width: 75%;
     height: 65%;
   }
 }
 @media screen and (max-width: 500px) {
-  body .corner {
+  body.login .corner {
     width: 80%;
     height: 60%;
   }
 }
 @media screen and (max-width: 400px) {
-  body .corner {
+  body.login .corner {
     width: 85%;
     height: 55%;
   }
 }
-body main {
+body.login main {
   width: 100%;
   height: 100vh;
   z-index: 1;
 }
-body main h1 {
+body.login main h1 {
   color: var(--grey-3);
   margin-bottom: 1.5rem;
 }
-body main form a {
+body.login main form a {
   cursor: pointer;
   font-size: 0.9rem;
   text-decoration: none;
@@ -76,6 +76,6 @@ body main form a {
   font-style: italic;
   transition: all 0.2s;
 }
-body main form a:focus, body main form a:hover {
+body.login main form a:focus, body.login main form a:hover {
   opacity: 0.9;
 }/*# sourceMappingURL=login.css.map */

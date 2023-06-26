@@ -1,3 +1,4 @@
 # Remove SASS files and maps
 # *.scss
 *.map
+assets/styles/*.min.css
